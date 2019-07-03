@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import CalendarDay from './components/CalendarDay';
 import { Jumbotron, Table } from 'reactstrap';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "Calendar Day"
-    }
-  }
-  render() {
-    return (
-      <div className="App">
-        <Jumbotron className="bg-info text-white">
-          <h1>Calendar</h1>
-          <h5>Weekly Schedule</h5>
-        </Jumbotron>
+function App() {
+  return (
+    <div className="App">
+      <Jumbotron className="bg-info text-white">
+        <h1>Calendar</h1>
+        <h5>Weekly Schedule</h5>
+      </Jumbotron>
+      <div className="px-3">
         <Table bordered>
           <thead>
             <tr>
@@ -28,14 +22,21 @@ class App extends Component {
               <th>Friday</th>
               <th>Saturday</th>
             </tr>
+            <tr>
+              <td><CalendarDay /></td>
+              <td><CalendarDay /></td>
+              <td><CalendarDay /></td>
+              <td><CalendarDay /></td>
+              <td><CalendarDay /></td>
+              <td><CalendarDay /></td>
+              <td><CalendarDay /></td>
+            </tr>
           </thead>
         </Table>
-
-
-        <CalendarDay title={this.state.title} />
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 
 export default App;
